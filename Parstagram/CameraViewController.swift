@@ -61,7 +61,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate & 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[.editedImage] as! UIImage
         let size = CGSize(width: 300, height: 300)
-        let scaleImage = image.af_imageScaled(to: size)
+        let scaleImage = image.af_imageAspectScaled(toFill: size)
         imageView.image = scaleImage
         
         // dismiss function is an amazing method for going back to previous VC. It is a perfect way for performance and you should really use it!
